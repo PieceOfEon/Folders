@@ -145,6 +145,42 @@ public:
         char* m= _strdup(mo.c_str());
         system(m);
     }
+
+    void tree()
+    {
+        string q = "tree ";
+        string ent;
+        cout << "For example->> D:\\Folder\\\n";
+        cout << "Enter path: ";
+        cin >> ent;
+        q += ent;
+        char* m = _strdup(q.c_str());
+        system(m);
+    }
+
+    void diskinfo()
+    {
+        string q = "CHKDSK ";
+        string ent;
+        cout << "For example->> D:  or  C: or enter your name disk on pk\n";
+        cout << "Enter path: ";
+        cin >> ent;
+        q += ent;
+        char* m = _strdup(q.c_str());
+        system(m);
+    }
+
+    void copy()
+    {
+        string g = "copy ";
+        string ent2;
+        cout << "For example->> D:\\123*\ D:\\10\n";
+        cout << "Enter path: ";
+        getline(cin, ent2);
+        g += ent2;
+        char* s = _strdup(g.c_str());
+        system(s);
+    }
 };
 
 int main(void)
@@ -161,6 +197,9 @@ int main(void)
         cout << "4 - Rename\n";
         cout << "5 - Name disk\n";
         cout << "6 - move file and folder\n";
+        cout << "7 - display folder/disk tree\n";
+        cout << "8 - disk integrity check\n";
+        cout << "9 - copy file\n";
         cout << "Exit - Esc\n";
         vvod = _getch();
         switch (vvod)
@@ -204,7 +243,24 @@ int main(void)
             system("pause");
             break;
         }
+        case'7':
+        {
+            Pa.tree();
+            system("pause");
+            break;
         }
-
+        case'8':
+        {
+            Pa.diskinfo();
+            system("pause");
+            break;
+        }
+        case'9':
+        {
+            Pa.copy();
+            system("pause");
+            break;
+        }
+        }
     } while (vvod != 27);
 }
